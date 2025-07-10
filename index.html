@@ -104,7 +104,10 @@ body {
   gap: 20px;
 }
 
-.card {
+
+#card-projrecentes {
+  grid-column: span 3 / span 3;
+  grid-row: span 3 / span 3;
   background-color: var(--bg-card);
   padding: 20px;
   border-radius: 12px;
@@ -112,6 +115,65 @@ body {
   transition: background 0.3s;
 }
 
+#card-es {
+  grid-column: span 3 / span 3;
+  grid-row: span 3 / span 3;
+  grid-column-start: 1;
+  grid-row-start: 4;
+  background-color: var(--bg-card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background 0.3s;
+}
+
+.card-tarpendentes {
+  grid-column: span 2 / span 2;
+  grid-row: span 4 / span 4;
+  grid-column-start: 4;
+  grid-row-start: 1;
+  background-color: var(--bg-card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background 0.3s;
+}
+
+.card-calendario {
+    background-color: var(--bg-card);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: background 0.3s;
+    grid-column: span 3 / span 3;
+    grid-row: span 3 / span 3;
+    grid-column-start: 6;
+    grid-row-start: 1;
+}
+
+.card-chat {
+    background-color: var(--bg-card);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: background 0.3s;
+    grid-column: span 3 / span 3;
+    grid-row: span 3 / span 3;
+    grid-column-start: 6;
+    grid-row-start: 4;
+}
+
+.card-data {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 4;
+    grid-row-start: 5;
+    background-color: var(--bg-card);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: background 0.3s;
+}
 .card h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
@@ -148,19 +210,27 @@ body {
       </button>
     </div>
     <div class="cards">
-      <div class="card">
+      <div class="card-projrecentes">
         <h3>Projetos Ativos</h3>
         <p>8 projetos em andamento</p>
       </div>
-      <div class="card">
+      <div class="card-es">
         <h3>Tarefas Pendentes</h3>
         <p>15 tarefas aguardando ação</p>
       </div>
-      <div class="card">
+      <div class="card-tarpendentes">
         <h3>Tarefas Concluídas</h3>
         <p>73 tarefas finalizadas</p>
       </div>
-      <div class="card">
+      <div class="card-calendario">
+        <h3>Próximos Prazos</h3>
+        <p>2 tarefas vencem hoje</p>
+      </div>
+      <div class="card-chat">
+        <h3>Próximos Prazos</h3>
+        <p>2 tarefas vencem hoje</p>
+      </div>
+      <div class="card-data">
         <h3>Próximos Prazos</h3>
         <p>2 tarefas vencem hoje</p>
       </div>
