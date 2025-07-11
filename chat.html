@@ -1,1 +1,151 @@
+<!DOCTYPE html><html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Gestão de Projetos</title>
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-main: #f5f7fa;
+      --bg-card: #ffffff;
+      --text-main: #111;
+      --text-muted: #555;
+      --sidebar-bg: #1e1e2f;
+      --sidebar-text: #ccc;
+      --sidebar-active: #2e2e42;
+    }.dark-mode {
+  --bg-main: #1a1b1e;
+  --bg-card: #2c2f36;
+  --text-main: #f1f1f1;
+  --text-muted: #ccc;
+  --sidebar-bg: #121212;
+  --sidebar-text: #aaa;
+  --sidebar-active: #2e2e42;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar {
+  width: 240px;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background 0.3s;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: var(--sidebar-text);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.menu-item:hover, .menu-item.active {
+  background-color: var(--sidebar-active);
+  color: #fff;
+}
+
+.menu-item i {
+  margin-right: 10px;
+}
+
+.main {
+  flex: 1;
+  padding: 30px;
+  background-color: var(--bg-main);
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.main h1 {
+  font-size: 2rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-main);
+  transition: color 0.3s;
+}
+</style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div>
+      <h2>Gestão</h2>
+      <a href="#" class="menu-item active"><i class='bx bx-grid-alt'></i> Dashboard</a>
+      <a href="#" class="menu-item"><i class='bx bx-folder'></i> Projetos</a>
+      <a href="#" class="menu-item"><i class='bx bx-task'></i> Tarefas</a>
+      <a href="#" class="menu-item"><i class='bx bx-calendar'></i> Calendário</a>
+      <a href="#" class="menu-item"><i class='bx bx-group'></i> Equipe</a>
+      <a href="#" class="menu-item"><i class='bx bx-bar-chart-alt-2'></i> Relatórios</a>
+      <a href="#" class="menu-item"><i class='bx bx-cog'></i> Configurações</a>
+    </div>
+    <div>
+      <a href="#" class="menu-item"><i class='bx bx-log-out'></i> Sair</a>
+    </div>
+  </aside>  <!-- Conteúdo principal -->  
+  <main class="main">
+    <div class="main-header">
+      <h1>Dashboard</h1>
+      <button class="theme-toggle" id="themeToggle">
+        <i class='bx bx-moon' id="themeIcon"></i>
+      </button>
+    </div>
+
+  
+  </main>  
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+
+    // Carregar preferência do usuário
+    const userTheme = localStorage.getItem('theme');
+    if (userTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      themeIcon.className = 'bx bx-sun';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      themeIcon.className = isDark ? 'bx bx-sun' : 'bx bx-moon';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script></body>
+</html>
+
+
+
 
