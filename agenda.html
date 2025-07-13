@@ -1,8 +1,9 @@
-<!DOCTYPE html><html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home - Gestão de Projetos</title>
+  <title>Agenda - Gestão de Projetos</title>
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -15,197 +16,207 @@
       --sidebar-text: #ccc;
       --sidebar-active: #2e2e42;
       --highlight: #ff70a6;
-    }.dark-mode {
-  --bg-main: #1a1b1e;
-  --bg-card: #2c2f36;
-  --text-main: #f1f1f1;
-  --text-muted: #ccc;
-  --sidebar-bg: #121212;
-  --sidebar-text: #aaa;
-  --sidebar-active: #2e2e42;
-  --highlight: #ffd700;
-}
+    }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
+    .dark-mode {
+      --bg-main: #1a1b1e;
+      --bg-card: #2c2f36;
+      --text-main: #f1f1f1;
+      --text-muted: #ccc;
+      --sidebar-bg: #121212;
+      --sidebar-text: #aaa;
+      --sidebar-active: #2e2e42;
+      --highlight: #ffd700;
+    }
 
-body {
-  display: flex;
-  height: 100vh;
-  background-color: var(--bg-main);
-  color: var(--text-main);
-  transition: background 0.3s, color 0.3s;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-.sidebar {
-  width: 240px;
-  background-color: var(--sidebar-bg);
-  color: var(--sidebar-text);
-  padding: 20px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: background 0.3s;
-}
+    body {
+      display: flex;
+      height: 100vh;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      transition: background 0.3s, color 0.3s;
+    }
 
-.sidebar h2 {
-  text-align: center;
-  margin-bottom: 30px;
-}
+    .sidebar {
+      width: 240px;
+      background-color: var(--sidebar-bg);
+      color: var(--sidebar-text);
+      padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-.menu-item {
-  display: flex;
-  align-items: center;
-  padding: 12px 20px;
-  color: var(--sidebar-text);
-  text-decoration: none;
-  transition: 0.3s;
-}
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-.menu-item:hover, .menu-item.active {
-  background-color: var(--sidebar-active);
-  color: #fff;
-}
+    .menu-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 20px;
+      color: var(--sidebar-text);
+      text-decoration: none;
+      transition: 0.3s;
+    }
 
-.menu-item i {
-  margin-right: 10px;
-}
+    .menu-item:hover, .menu-item.active {
+      background-color: var(--sidebar-active);
+      color: #fff;
+    }
 
-.main {
-  flex: 1;
-  padding: 30px;
-  background-color: var(--bg-main);
-}
+    .menu-item i {
+      margin-right: 10px;
+    }
 
-.main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
+    .main {
+      flex: 1;
+      padding: 30px;
+      background-color: var(--bg-main);
+    }
 
-.main h1 {
-  font-size: 2rem;
-}
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
 
-.theme-toggle {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--text-main);
-  transition: color 0.3s;
-}
+    .theme-toggle {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-main);
+    }
 
-.calendar-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
+    .calendar-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
 
-.calendar-nav button {
-  background: none;
-  border: none;
-  color: var(--text-main);
-  font-size: 18px;
-  cursor: pointer;
-}
+    .calendar-nav button {
+      background: none;
+      border: none;
+      color: var(--text-main);
+      font-size: 18px;
+      cursor: pointer;
+    }
 
-.calendar {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
-  max-width: 800px;
-  margin: auto;
-}
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      max-width: 800px;
+      margin: auto;
+    }
 
-.day, .empty {
-  background-color: var(--bg-card);
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-  min-height: 80px;
-  position: relative;
-  transition: 0.3s;
-}
+    .day, .empty {
+      background-color: var(--bg-card);
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      min-height: 80px;
+      position: relative;
+      transition: 0.3s;
+    }
 
-.day.highlight {
-  background-color: var(--highlight) !important;
-  color: #000;
-  cursor: pointer;
-}
+    .day.highlight {
+      background-color: var(--highlight) !important;
+      color: #000;
+      cursor: pointer;
+    }
 
-.event {
-  font-size: 0.7em;
-  margin-top: 5px;
-  color: inherit;
-}
+    .day.orange {
+      background-color: orange !important;
+      color: #000;
+    }
 
-.form-container {
-  max-width: 400px;
-  margin: 30px auto;
-  background: var(--bg-card);
-  padding: 20px;
-  border-radius: 12px;
-}
+    .event {
+      font-size: 0.7em;
+      margin-top: 5px;
+    }
 
-input, button {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-  font-size: 1em;
-}
+    .days-of-week {
+      font-weight: bold;
+      text-align: center;
+    }
 
-button {
-  background-color: #6a5acd;
-  color: #fff;
-  cursor: pointer;
-}
+    #addEventBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #ff70a6;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 2rem;
+      cursor: pointer;
+      z-index: 5;
+    }
 
-button:hover {
-  background-color: #8470ff;
-}
+    .modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--bg-card);
+      color: var(--text-main);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      display: none;
+      z-index: 10;
+      max-width: 90%;
+      width: 400px;
+    }
 
-.days-of-week {
-  font-weight: bold;
-  text-align: center;
-}
+    .modal input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background: var(--bg-main);
+      color: var(--text-main);
+    }
 
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--bg-card);
-  color: var(--text-main);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  display: none;
-  z-index: 10;
-}
+    .modal-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
 
-.modal input {
-  margin-top: 10px;
-}
+    .modal-buttons button {
+      flex: 1;
+      margin: 5px;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
 
-.modal-buttons {
-  display: flex;
-  gap: 10px;
-}
+    .modal-buttons button:nth-child(1) { background-color: #28a745; color: white; }
+    .modal-buttons button:nth-child(2) { background-color: #dc3545; color: white; }
+    .modal-buttons button:nth-child(3) { background-color: #6c757d; color: white; }
 
   </style>
 </head>
 <body>
+  <!-- Sidebar -->
   <aside class="sidebar">
     <div>
       <h2>Gestão</h2>
@@ -220,50 +231,51 @@ button:hover {
     <div>
       <a href="#" class="menu-item"><i class='bx bx-log-out'></i> Sair</a>
     </div>
-  </aside>  <main class="main">
+  </aside>
+
+  <!-- Conteúdo principal -->
+  <main class="main">
     <div class="main-header">
-      <h1>Dashboard</h1>
-      <button class="theme-toggle" id="themeToggle">
-        <i class='bx bx-moon' id="themeIcon"></i>
-      </button>
-    </div><div class="calendar-nav">
-  <button onclick="changeMonth(-1)"><i class="fas fa-chevron-left"></i></button>
-  <h2 id="monthYear"></h2>
-  <button onclick="changeMonth(1)"><i class="fas fa-chevron-right"></i></button>
-</div>
+      <h1>Agenda</h1>
+      <button class="theme-toggle" id="themeToggle"><i class='bx bx-moon' id="themeIcon"></i></button>
+    </div>
 
-<div class="calendar" id="calendar"></div>
+    <div class="calendar-nav">
+      <button onclick="changeMonth(-1)"><i class="fas fa-chevron-left"></i></button>
+      <h2 id="monthYear"></h2>
+      <button onclick="changeMonth(1)"><i class="fas fa-chevron-right"></i></button>
+    </div>
 
-<div class="form-container">
-  <h2>Adicionar Evento</h2>
-  <label for="eventDay">Dia:</label>
-  <input type="number" id="eventDay" min="1" max="31" />
+    <div class="calendar" id="calendar"></div>
+  </main>
 
-  <label for="eventText">Descrição:</label>
-  <input type="text" id="eventText" />
+  <!-- Botão flutuante -->
+  <button id="addEventBtn">+</button>
 
-  <button onclick="addEvent()">Salvar Evento</button>
-</div>
-
-<div class="modal" id="eventModal">
-  <h3>Editar Evento</h3>
-  <input type="text" id="editEventText" />
-  <div class="modal-buttons">
-    <button onclick="saveEdit()">Salvar</button>
-    <button onclick="deleteEvent()">Excluir</button>
-    <button onclick="closeModal()">Cancelar</button>
+  <!-- Modal de evento -->
+  <div class="modal" id="eventModal">
+    <h3>Adicionar/Editar Evento</h3>
+    <input type="number" id="eventDay" min="1" max="31" placeholder="Dia" />
+    <input type="text" id="eventText" placeholder="Descrição do evento" />
+    <div class="modal-buttons">
+      <button onclick="saveEdit()">Salvar</button>
+      <button onclick="deleteEvent()">Excluir</button>
+      <button onclick="closeModal()">Cancelar</button>
+    </div>
   </div>
-</div>
 
-  </main>  <script>
+  <!-- Script -->
+  <script>
     const toggleBtn = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
     const calendarEl = document.getElementById('calendar');
     const monthYearEl = document.getElementById('monthYear');
     const modal = document.getElementById('eventModal');
-    const editEventText = document.getElementById('editEventText');
-    let selectedKey = null;
+    const editEventText = document.getElementById('eventText');
+    const editEventDay = document.getElementById('eventDay');
+    const addEventBtn = document.getElementById('addEventBtn');
 
+    let selectedKey = null;
     let currentDate = new Date();
     const events = JSON.parse(localStorage.getItem("events") || "{}");
 
@@ -283,6 +295,18 @@ button:hover {
       themeIcon.className = isDark ? 'bx bx-sun' : 'bx bx-moon';
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
+
+    addEventBtn.onclick = () => {
+      modal.style.display = 'block';
+      const today = new Date().getDate();
+      editEventDay.value = today;
+      editEventText.value = '';
+      selectedKey = null;
+    };
+
+    function closeModal() {
+      modal.style.display = 'none';
+    }
 
     function renderCalendar() {
       calendarEl.innerHTML = '';
@@ -305,21 +329,28 @@ button:hover {
       }
 
       for (let day = 1; day <= lastDate; day++) {
+        const key = `${year}-${month}-${day}`;
         const dayEl = document.createElement("div");
         dayEl.classList.add("day");
-        const key = `${year}-${month}-${day}`;
         dayEl.textContent = day;
 
         if (events[key]) {
-          dayEl.classList.add("highlight");
+          const eventText = events[key];
           const ev = document.createElement("div");
           ev.className = "event";
-          ev.textContent = events[key];
+          ev.textContent = eventText;
           dayEl.appendChild(ev);
+
+          if (eventText.toLowerCase().includes("prazo") || eventText.toLowerCase().includes("fim")) {
+            dayEl.classList.add("orange");
+          } else {
+            dayEl.classList.add("highlight");
+          }
 
           dayEl.onclick = () => {
             selectedKey = key;
-            editEventText.value = events[key];
+            editEventDay.value = day;
+            editEventText.value = eventText;
             modal.style.display = 'block';
           };
         }
@@ -330,9 +361,9 @@ button:hover {
       monthYearEl.textContent = `${monthNames[month]} ${year}`;
     }
 
-    function addEvent() {
-      const day = parseInt(document.getElementById('eventDay').value);
-      const text = document.getElementById('eventText').value.trim();
+    function saveEdit() {
+      const day = parseInt(editEventDay.value);
+      const text = editEventText.value.trim();
 
       if (!day || !text) {
         alert("Preencha corretamente os campos!");
@@ -342,13 +373,21 @@ button:hover {
       const year = currentDate.getFullYear();
       const month = currentDate.getMonth();
       const key = `${year}-${month}-${day}`;
+
       events[key] = text;
-
       localStorage.setItem("events", JSON.stringify(events));
+      closeModal();
       renderCalendar();
+    }
 
-      document.getElementById('eventDay').value = '';
-      document.getElementById('eventText').value = '';
+    function deleteEvent() {
+      if (!selectedKey) return;
+      if (confirm("Deseja realmente excluir este evento?")) {
+        delete events[selectedKey];
+        localStorage.setItem("events", JSON.stringify(events));
+        closeModal();
+        renderCalendar();
+      }
     }
 
     function changeMonth(offset) {
@@ -356,28 +395,7 @@ button:hover {
       renderCalendar();
     }
 
-    function closeModal() {
-      modal.style.display = 'none';
-    }
-
-    function saveEdit() {
-      if (selectedKey && editEventText.value.trim()) {
-        events[selectedKey] = editEventText.value.trim();
-        localStorage.setItem("events", JSON.stringify(events));
-        renderCalendar();
-        closeModal();
-      }
-    }
-
-    function deleteEvent() {
-      if (selectedKey && confirm("Tem certeza que deseja excluir o evento?")) {
-        delete events[selectedKey];
-        localStorage.setItem("events", JSON.stringify(events));
-        renderCalendar();
-        closeModal();
-      }
-    }
-
     renderCalendar();
-  </script></body>
+  </script>
+</body>
   </html>
